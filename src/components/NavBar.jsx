@@ -18,7 +18,7 @@ export function NavBar({ isDarkMode }) {
   }, []);
 
   const navList = (
-    <ul className="mt-2 mb-4 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
+    <ul className="mt-2 mb-4 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:gap-6 sticky top-0 bg-white z-10">
       <Typography
         as="li"
         variant="small"
@@ -95,14 +95,14 @@ export function NavBar({ isDarkMode }) {
         <Typography
           as="a"
           href="#"
-          className={`mr-4 cursor-pointer py-1.5 font-bold text-2xl ${
+          className={`mr-4 cursor-pointer py-1.5 font-bold text-xl ${
             isDarkMode ? "text-white" : "text-black"
           }`}
         >
           Wang.<span style={{ color: "#DC7F60" }}>Dev</span>
         </Typography>
         <div className="hidden lg:block">{navList}</div>
-        <div className="flex items-center gap-x-1">
+        {/* <div className="flex items-center gap-x-1">
           <Button
             variant="text"
             size="sm"
@@ -121,7 +121,7 @@ export function NavBar({ isDarkMode }) {
           >
             <span>Sign in</span>
           </Button>
-        </div>
+        </div> */}
         <IconButton
           variant="text"
           className="ml-auto h-6 w-6 text-inherit lg:hidden outline-none focus:ring-0"
