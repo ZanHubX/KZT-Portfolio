@@ -47,7 +47,7 @@ export function NavBar({ isDarkMode }) {
         as="li"
         variant="small"
         color="blue-gray"
-        className={`flex items-center gap-x-2 p-2 font-medium ${
+        className={`flex items-center gap-x-2 p-1 font-medium ${
           isDarkMode ? "text-white" : "text-black"
         }`}
       >
