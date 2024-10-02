@@ -3,7 +3,6 @@ import {
   Navbar,
   MobileNav,
   Typography,
-
   IconButton,
 } from "@material-tailwind/react";
 
@@ -18,7 +17,7 @@ export function NavBar({ isDarkMode }) {
   }, []);
 
   const navList = (
-    <ul className="mt-2 mb-3 flex flex-col gap-3 lg:mb-0 lg:mt-0 lg:flex-row lg:gap-6 sticky top-0 bg-white z-10">
+    <ul className="mt-2 mb-3 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:gap-6 sticky top-0 bg-white z-10">
       <Typography
         as="li"
         variant="small"
