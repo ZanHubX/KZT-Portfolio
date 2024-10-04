@@ -124,7 +124,7 @@ export function NavBar({ isDarkMode }) {
         </div> */}
         <IconButton
           variant="text"
-          className="ml-auto h-5 w-6 text-inherit lg:hidden outline-none focus:ring-0"
+          className="ml-auto h-6 w-6 text-inherit lg:hidden outline-none focus:ring-0"
           onClick={() => setOpenNav(!openNav)}
         >
           {openNav ? (
