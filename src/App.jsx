@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import NavBar from "./components/NavBar";
 
 import { SunIcon, MoonIcon } from "@heroicons/react/16/solid";
-import Hero from "./components/Hero";
+
+import Home from "./components/home/Home";
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -23,7 +24,7 @@ function App() {
       </div>
       {/* Pass isDarkMode prop */}
       <NavBar isDarkMode={isDarkMode} />
-      <Hero />
+      <Home/>
     </div>
   );
 }
