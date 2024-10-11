@@ -18,7 +18,7 @@ export function NavBar({ isDarkMode }) {
 
 
   const navList = (
-    <ul className="mt-2 mb-3 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:gap-6 sticky top-0 text-white z-10">
+    <ul className="mt-2  flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:gap-6 sticky top-0 text-white z-10">
       <Typography
         as="li"
         variant="small"
@@ -124,7 +124,7 @@ export function NavBar({ isDarkMode }) {
         </div> */}
         <IconButton
           variant="text"
-          className="ml-auto h-6 w-6 text-inherit lg:hidden outline-none focus:ring-0"
+          className="ml-auto flex-col h-6 w-6 text-inherit lg:hidden outline-none focus:ring-0"
           onClick={() => setOpenNav(!openNav)}
         >
           {openNav ? (
@@ -160,7 +160,9 @@ export function NavBar({ isDarkMode }) {
           )}
         </IconButton>
       </div>
-      <MobileNav open={openNav}>{navList}</MobileNav>
+      <MobileNav open={openNav} className="w-full">
+        {navList}
+      </MobileNav>
     </Navbar>
   );
 }

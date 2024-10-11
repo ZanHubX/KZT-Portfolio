@@ -1,14 +1,18 @@
-import React from 'react';
-import "./home.css";
-import Social from './Social';
-import Data from './Data';
-import ScrollDown from './ScrollDown';
-import {motion} from 'framer-motion'
+import React from "react";
+import Social from "./Social";
+import Data from "./Data";
+import './home.css'
+import ScrollDown from "./ScrollDown";
+import { motion } from "framer-motion";
 
-
-const Home = () => {
+const Home = ({ isDarkMode }) => {
   return (
-    <section className="home section" id="home">
+    <section
+      className={`home section w-full h-screen flex items-center justify-center ${
+        isDarkMode ? "dark" : ""
+      }`}
+      id="home"
+    >
       <div className="home__container container grid">
         <div className="home__content grid">
           <Social />
@@ -31,6 +35,6 @@ const Home = () => {
       </div>
     </section>
   );
-}
+};
 
-export default Home
+export default Home;

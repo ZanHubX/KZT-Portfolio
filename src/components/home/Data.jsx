@@ -1,6 +1,6 @@
 import React from "react";
-import "./home.css"
-import {motion} from "framer-motion";
+import "./home.css";
+import { motion } from "framer-motion";
 
 const Data = () => {
   return (
