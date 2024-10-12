@@ -1,3 +1,7 @@
+
+
+
+
 .home__container {
   row-gap: 7rem;
 }
@@ -30,9 +34,9 @@
 }
 
 .home__title {      
-    font-weight: bolder;
+  font-weight: bolder;
   font-size: 40px;
-  margin-bottom: var(--mb-0-25);
+  margin-bottom: var(--mb-0-15);
 }
 
 .home__subtitle {

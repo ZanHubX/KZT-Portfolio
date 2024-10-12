@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import {
   Navbar,
   MobileNav,
@@ -7,78 +7,31 @@ import {
 } from "@material-tailwind/react";
 
 export function NavBar({ isDarkMode }) {
-  const [openNav, setOpenNav] = React.useState(false);
+  const [openNav, setOpenNav] = useState(false);
 
-  React.useEffect(() => {
+  useEffect(() => {
     window.addEventListener(
       "resize",
       () => window.innerWidth >= 960 && setOpenNav(false)
     );
   }, []);
 
-
   const navList = (
-    <ul className="mt-2  flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:gap-6 sticky top-0 text-white z-10">
-      <Typography
-        as="li"
-        variant="small"
-        color="blue-gray"
-        className={`flex items-center gap-x-2 p-1 font-medium ${
-          isDarkMode ? "text-white" : "text-black"
-        }`}
-      >
-        <a href="#" className="flex items-center">
-          Home
-        </a>
-      </Typography>
-      <Typography
-        as="li"
-        variant="small"
-        color="blue-gray"
-        className={`flex items-center gap-x-2 p-1 font-medium ${
-          isDarkMode ? "text-white" : "text-black"
-        }`}
-      >
-        <a href="#" className="flex items-center">
-          About
-        </a>
-      </Typography>
-      <Typography
-        as="li"
-        variant="small"
-        color="blue-gray"
-        className={`flex items-center gap-x-2 p-1 font-medium ${
-          isDarkMode ? "text-white" : "text-black"
-        }`}
-      >
-        <a href="#" className="flex items-center">
-          Skills
-        </a>
-      </Typography>
-      <Typography
-        as="li"
-        variant="small"
-        color="blue-gray"
-        className={`flex items-center gap-x-2 p-1 font-medium ${
-          isDarkMode ? "text-white" : "text-black"
-        }`}
-      >
-        <a href="#" className="flex items-center">
-          Portfolio
-        </a>
-      </Typography>
-      <Typography
-        as="li"
-        variant="small"
-        color="blue-gray"
-        className={`flex items-center gap-x-2 p-1 font-medium ${
-          isDarkMode ? "text-white" : "text-black"
-        }`}
-      >
-        <a href="" className="flex items-center">
-          Contact
-        </a>
-      </Typography>
+    <ul className="mt-2 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:gap-6 text-white">
+      {["Home", "About", "Skills", "Portfolio", "Contact"].map((item) => (
+        <Typography
+          key={item}
+          as="li"
+          variant="small"
+          className={`flex items-center gap-x-2 p-1 font-medium ${
+            isDarkMode ? "text-white" : "text-black"
+          }`}
+        >
+          <a href={`#${item.toLowerCase()}`} className="flex items-center">
+            {item}
+          </a>
+        </Typography>
+      ))}
     </ul>
   );
 
@@ -91,7 +44,8 @@ export function NavBar({ isDarkMode }) {
         animation: "float 3s ease-in-out infinite",
       }}
     >
-      <div className="container mx-auto flex items-center justify-between text-blue-gray-900">
+      <div className="container mx-auto flex items-center justify-between">
+        {/* Logo */}
         <Typography
           as="a"
           href="#"
@@ -101,30 +55,14 @@ export function NavBar({ isDarkMode }) {
         >
           Wang.<span style={{ color: "#DC7F60" }}>Dev</span>
         </Typography>
+
+        {/* Desktop Menu */}
         <div className="hidden lg:block">{navList}</div>
-        {/* <div className="flex items-center gap-x-1">
-          <Button
-            variant="text"
-            size="sm"
-            className={`hidden lg:inline-block ${
-              isDarkMode ? "text-white" : "text-black"
-            }`}
-          >
-            <span>Log In</span>
-          </Button>
-          <Button
-            variant="text"
-            size="sm"
-            className={`hidden lg:inline-block ${
-              isDarkMode ? "text-white" : "text-black"
-            }`}
-          >
-            <span>Sign in</span>
-          </Button>
-        </div> */}
+
+        {/* Mobile Hamburger Icon */}
         <IconButton
           variant="text"
-          className="ml-auto flex-col h-6 w-6 text-inherit lg:hidden outline-none focus:ring-0"
+          className="ml-auto flex items-center justify-center h-6 w-6 text-inherit lg:hidden outline-none focus:ring-0"
           onClick={() => setOpenNav(!openNav)}
         >
           {openNav ? (
@@ -160,7 +98,9 @@ export function NavBar({ isDarkMode }) {
           )}
         </IconButton>
       </div>
-      <MobileNav open={openNav} className="w-full">
+
+      {/* Mobile Menu */}
+      <MobileNav open={openNav} className="w-full text-center">
         {navList}
       </MobileNav>
     </Navbar>
