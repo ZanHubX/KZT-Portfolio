@@ -12,7 +12,7 @@ const Data = () => {
           type: "spring",
           stiffness: 100,
           damping: 10,
-          delay: 1,
+          delay: 1.1,
         }}
         className="home__title"
       >
