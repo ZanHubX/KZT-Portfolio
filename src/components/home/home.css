@@ -50,7 +50,7 @@
 .home__subtitle::before {
   content: "";
   position: absolute;
-  width: 71px;
+  width: 70px;
   height: 1px;
   background-color: var(--text-color);
   left: 0;
