@@ -49,7 +49,7 @@ export function NavBar({ isDarkMode }) {
         <Typography
           as="a"
           href="#"
-          className={`mr-4 cursor-pointer py-1.5 font-bold text-xl ${
+          className={`mr-3 cursor-pointer py-1.5 font-bold text-xl ${
             isDarkMode ? "text-white" : "text-black"
           }`}
         >
